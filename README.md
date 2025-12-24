@@ -2,11 +2,11 @@
 
 Bu proje, RabbitMQ mesaj kuyruğu sistemini öğrenmek için basit Node.js örnekleri içerir.
 
-## 📋 Proje Hakkında
+## Proje Hakkında
 
 RabbitMQ, mesaj kuyruğu (message queue) sistemi için kullanılan açık kaynaklı bir yazılımdır. Bu proje, RabbitMQ'nun temel kullanımını gösteren basit örnekler içerir.
 
-## 🚀 Gereksinimler
+## Gereksinimler
 
 - **Node.js** (v10 veya üzeri)
 - **RabbitMQ Server** (yerel olarak kurulu ve çalışır durumda)
@@ -24,14 +24,14 @@ rabbitmq-plugins enable rabbitmq_management
 
 **Management UI:** http://localhost:15672 (varsayılan: guest/guest)
 
-## 📦 Kurulum
+## Kurulum
 
 ```bash
 # Bağımlılıkları yükleyin
 npm install
 ```
 
-## 💻 Kullanım
+## Kullanım
 
 ### 1. Consumer'ı Başlatın (Mesaj Alıcı)
 
@@ -79,7 +79,7 @@ messege {"description":"bu bir test mesajı"}
 ...
 ```
 
-## 🔧 Özelleştirme
+## Özelleştirme
 
 ### Farklı Queue Adı Kullanma
 
@@ -103,7 +103,7 @@ const messege = {
 };
 ```
 
-## 📁 Proje Yapısı
+## Proje Yapısı
 
 ```
 RabbitMQ/
@@ -114,7 +114,7 @@ RabbitMQ/
 └── node_modules/         # Node.js paketleri (git'e eklenmez)
 ```
 
-## 🎯 Nasıl Çalışır?
+## Nasıl Çalışır?
 
 1. **Publisher** → RabbitMQ'ya mesaj gönderir → `TestQueue` queue'suna ekler
 2. **Consumer** → Queue'dan mesajları okur → Konsola yazdırır → Mesajı onaylar (ack)
@@ -125,15 +125,15 @@ RabbitMQ Management UI'dan queue'ları görüntüleyebilirsiniz:
 - http://localhost:15672
 - Queues sekmesinden `TestQueue` queue'sunu görebilirsiniz
 
-## 📚 Öğrenilen Kavramlar
+## Öğrenilen Kavramlar
 
-- ✅ RabbitMQ bağlantısı kurma
-- ✅ Queue oluşturma (`assertQueue`)
-- ✅ Mesaj gönderme (`sendToQueue`)
-- ✅ Mesaj alma (`consume`)
-- ✅ Mesaj onaylama (`ack`)
+- RabbitMQ bağlantısı kurma
+- Queue oluşturma (`assertQueue`)
+- Mesaj gönderme (`sendToQueue`)
+- Mesaj alma (`consume`)
+- Mesaj onaylama (`ack`)
 
-## 🔍 Sorun Giderme
+## Sorun Giderme
 
 **RabbitMQ bağlantı hatası:**
 - RabbitMQ servisinin çalıştığından emin olun
@@ -143,13 +143,10 @@ RabbitMQ Management UI'dan queue'ları görüntüleyebilirsiniz:
 - Consumer'ın çalıştığından emin olun
 - Queue adının aynı olduğunu kontrol edin
 
-## 📄 Lisans
+## Lisans
 
 ISC
 
-## 👨‍💻 Geliştirici Notları
+## Geliştirici Notları
 
 Bu proje, RabbitMQ'nun temel kullanımını öğrenmek için oluşturulmuştur. Production ortamında kullanmadan önce hata yönetimi, bağlantı yönetimi ve güvenlik önlemleri eklenmelidir.
-### Hazırlayan 
-Hüseyin Emre Ustaer
-

@@ -41,7 +41,76 @@ erl -version
 rabbitmq-plugins enable rabbitmq_management
 ```
 
-**Management UI:** http://localhost:15672 (varsayılan: guest/guest)
+### Management Plugin ve Web UI
+
+RabbitMQ Management Plugin, RabbitMQ sunucusunu web arayüzü üzerinden yönetmenizi sağlayan önemli bir eklentidir. **Bu plugin etkinleştirilmediği takdirde, http://localhost:15672 adresine eriştiğinizde herhangi bir web arayüzü (UI) görünmeyecektir.** Management Plugin olmadan RabbitMQ'yu yalnızca komut satırı üzerinden yönetebilirsiniz.
+
+**Management Plugin'i Etkinleştirme:**
+
+```bash
+# Plugin'i etkinleştir
+rabbitmq-plugins enable rabbitmq_management
+
+# Etkinleştirme sonrası RabbitMQ servisini yeniden başlatın (Windows)
+net stop RabbitMQ
+net start RabbitMQ
+
+# veya PowerShell ile
+Restart-Service RabbitMQ
+```
+
+**Plugin Durumunu Kontrol Etme:**
+
+```bash
+# Tüm plugin'lerin durumunu görüntüle
+rabbitmq-plugins list
+
+# Management plugin'in etkin olduğunu doğrula (liste içinde [E] işareti görünmeli)
+```
+
+**Management UI Erişimi:**
+
+Plugin başarıyla etkinleştirildikten ve RabbitMQ servisi yeniden başlatıldıktan sonra:
+- **URL:** http://localhost:15672
+- **Varsayılan Kullanıcı Adı:** guest
+- **Varsayılan Şifre:** guest
+
+**Management Plugin Çalışmıyorsa:**
+
+1. RabbitMQ servisinin çalıştığından emin olun:
+   ```bash
+   net start RabbitMQ
+   ```
+
+2. Plugin'in doğru şekilde etkinleştirildiğini kontrol edin:
+   ```bash
+   rabbitmq-plugins list | findstr management
+   ```
+
+3. Port 15672'nin başka bir uygulama tarafından kullanılmadığından emin olun:
+   ```bash
+   netstat -ano | findstr :15672
+   ```
+
+4. Windows Firewall'un port 15672'yi engellemediğinden emin olun
+
+5. Eğer hala çalışmıyorsa, plugin'i devre dışı bırakıp tekrar etkinleştirin:
+   ```bash
+   rabbitmq-plugins disable rabbitmq_management
+   rabbitmq-plugins enable rabbitmq_management
+   net stop RabbitMQ
+   net start RabbitMQ
+   ```
+
+**Management UI Özellikleri:**
+
+Management Plugin etkin olduğunda web arayüzü üzerinden şunları yapabilirsiniz:
+- Queue'ları görüntüleme ve yönetme
+- Mesajları izleme ve test etme
+- Bağlantıları ve kanalları görüntüleme
+- Kullanıcı ve izinleri yönetme
+- Sistem kaynaklarını izleme
+- Exchange ve binding'leri yönetme
 
 ## Kurulum
 
@@ -162,6 +231,13 @@ RabbitMQ Management UI'dan queue'ları görüntüleyebilirsiniz:
 **Erlang kurulum sorunları:**
 - RabbitMQ kurulumu sırasında Erlang bulunamazsa, önce Erlang/OTP'yi manuel olarak kurun
 - Sistem PATH değişkeninde Erlang'ın doğru şekilde tanımlı olduğundan emin olun
+
+**Management UI görünmüyor (http://localhost:15672 erişilemiyor):**
+- Management Plugin'in etkinleştirildiğinden emin olun (`rabbitmq-plugins list` ile kontrol edin)
+- RabbitMQ servisini yeniden başlatın (`net stop RabbitMQ` ve `net start RabbitMQ`)
+- Port 15672'nin başka bir uygulama tarafından kullanılmadığını kontrol edin
+- Windows Firewall ayarlarını kontrol edin
+- Tarayıcıda farklı bir port deneyin veya RabbitMQ log dosyalarını kontrol edin
 
 **Mesajlar görünmüyor:**
 - Consumer'ın çalıştığından emin olun

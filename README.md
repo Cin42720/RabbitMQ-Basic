@@ -150,3 +150,7 @@ ISC
 ## Geliştirici Notları
 
 Bu proje, RabbitMQ'nun temel kullanımını öğrenmek için oluşturulmuştur. Production ortamında kullanmadan önce hata yönetimi, bağlantı yönetimi ve güvenlik önlemleri eklenmelidir.
+
+## Hazırlayan
+
+Hüseyin Emre Ustaer

@@ -9,7 +9,25 @@ RabbitMQ, mesaj kuyruğu (message queue) sistemi için kullanılan açık kaynak
 ## Gereksinimler
 
 - **Node.js** (v10 veya üzeri)
+- **Erlang/OTP** (RabbitMQ'nun çalışması için gerekli)
 - **RabbitMQ Server** (yerel olarak kurulu ve çalışır durumda)
+
+### Erlang Hakkında ve Kurulumu
+
+RabbitMQ, **Erlang** programlama dili ile yazılmıştır. Erlang, yüksek kullanılabilirlik ve dağıtık sistemler için tasarlanmış fonksiyonel bir programlama dilidir. RabbitMQ'nun çalışabilmesi için sisteminizde Erlang Runtime (ERL) kurulu olması gerekmektedir.
+
+**Windows için Erlang Kurulumu:**
+```bash
+# Erlang/OTP'yi indirin ve kurun
+# https://www.erlang.org/downloads
+# veya
+# https://github.com/erlang/otp/releases
+
+# Kurulum sonrası versiyonu kontrol edin
+erl -version
+```
+
+**Not:** RabbitMQ'nun çalışması için genellikle Erlang/OTP 23.2 veya üzeri bir sürüm gereklidir. RabbitMQ kurulum paketleri genellikle uyumlu Erlang sürümünü otomatik olarak içerir, ancak manuel kurulum yapıyorsanız Erlang'ın önce kurulması önerilir.
 
 ### RabbitMQ Kurulumu
 
@@ -17,6 +35,7 @@ RabbitMQ, mesaj kuyruğu (message queue) sistemi için kullanılan açık kaynak
 ```bash
 # RabbitMQ Server'ı indirin ve kurun
 # https://www.rabbitmq.com/download.html
+# Not: RabbitMQ kurulum paketi genellikle uyumlu Erlang sürümünü içerir
 
 # Management UI'yi etkinleştirin
 rabbitmq-plugins enable rabbitmq_management
@@ -138,6 +157,11 @@ RabbitMQ Management UI'dan queue'ları görüntüleyebilirsiniz:
 **RabbitMQ bağlantı hatası:**
 - RabbitMQ servisinin çalıştığından emin olun
 - `net start RabbitMQ` (Windows) ile servisi başlatın
+- Erlang Runtime'ın kurulu olduğundan emin olun (`erl -version` ile kontrol edin)
+
+**Erlang kurulum sorunları:**
+- RabbitMQ kurulumu sırasında Erlang bulunamazsa, önce Erlang/OTP'yi manuel olarak kurun
+- Sistem PATH değişkeninde Erlang'ın doğru şekilde tanımlı olduğundan emin olun
 
 **Mesajlar görünmüyor:**
 - Consumer'ın çalıştığından emin olun

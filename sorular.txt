@@ -1,0 +1,107 @@
+═══════════════════════════════════════════════════════════════
+RABBITMQ PROJESİ - BİLGİ TESTİ
+═══════════════════════════════════════════════════════════════
+
+1. RabbitMQ nedir?
+   A) Bir veritabanı yönetim sistemi
+   B) Bir mesaj kuyruğu (message queue) sistemi
+   C) Bir web sunucusu
+   D) Bir programlama dili
+   
+   Doğru Cevap: B
+
+───────────────────────────────────────────────────────────────
+
+2. Bu projedeki publisher.js dosyası ne yapar?
+   A) Mesajları queue'dan okur ve işler
+   B) Mesajları queue'ya gönderir
+   C) RabbitMQ sunucusunu başlatır
+   D) Queue'ları siler
+   
+   Doğru Cevap: B
+
+───────────────────────────────────────────────────────────────
+
+3. Consumer.js dosyasında mesajlar nasıl alınır?
+   A) sendToQueue() fonksiyonu ile
+   B) consume() fonksiyonu ile
+   C) connect() fonksiyonu ile
+   D) assertQueue() fonksiyonu ile
+   
+   Doğru Cevap: B
+
+───────────────────────────────────────────────────────────────
+
+4. RabbitMQ Management UI'ye hangi adresten erişilir?
+   A) http://localhost:8000
+   B) http://localhost:5672
+   C) http://localhost:15672
+   D) http://localhost:3306
+   
+   Doğru Cevap: C
+
+───────────────────────────────────────────────────────────────
+
+5. Publisher.js'de varsayılan queue adı nedir?
+   A) MyQueue
+   B) TestQueue
+   C) DefaultQueue
+   D) RabbitQueue
+   
+   Doğru Cevap: B
+
+───────────────────────────────────────────────────────────────
+
+6. Mesaj göndermeden önce queue'nun oluşturulması için hangi fonksiyon kullanılır?
+   A) createQueue()
+   B) assertQueue()
+   C) declareQueue()
+   D) makeQueue()
+   
+   Doğru Cevap: B
+
+───────────────────────────────────────────────────────────────
+
+7. Consumer'da mesaj işlendikten sonra ne yapılmalıdır?
+   A) Mesaj otomatik silinir
+   B) channel.ack(msg) ile mesaj onaylanır
+   C) Mesaj tekrar gönderilir
+   D) Hiçbir şey yapılmaz
+   
+   Doğru Cevap: B
+
+───────────────────────────────────────────────────────────────
+
+8. Publisher.js'de mesajlar hangi sıklıkla gönderilir?
+   A) Her 1 saniyede bir
+   B) Her 1 milisaniyede bir (1ms)
+   C) Her 10 saniyede bir
+   D) Sadece bir kez
+   
+   Doğru Cevap: B
+
+───────────────────────────────────────────────────────────────
+
+9. RabbitMQ'ya bağlanmak için hangi protokol kullanılır?
+   A) HTTP
+   B) HTTPS
+   C) AMQP
+   D) FTP
+   
+   Doğru Cevap: C
+
+───────────────────────────────────────────────────────────────
+
+10. Bu projede mesajlar hangi formatta gönderilir?
+    A) XML formatında
+    B) JSON formatında (Buffer ile)
+    C) Plain text olarak
+    D) Binary olarak
+    
+    Doğru Cevap: B
+
+═══════════════════════════════════════════════════════════════
+CEVAP ANAHTARI
+═══════════════════════════════════════════════════════════════
+
+
